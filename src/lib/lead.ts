@@ -1,5 +1,6 @@
-// Função de envio isolada — pronta para integrar com webhook, CRM, Supabase,
-// API externa ou planilha. Basta implementar o transporte dentro de sendLead.
+import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
+
 export type Lead = {
   nome: string;
   whatsapp: string;
@@ -10,28 +11,52 @@ export type Lead = {
   consentimento: boolean;
 };
 
-export const LEAD_WEBHOOK_URL = ""; // ex.: "https://seu-crm.com/webhook"
+const leadSchema = z.object({
+  nome: z.string().min(3),
+  whatsapp: z.string().min(10),
+  cnpj: z.string().min(14),
+  estado: z.enum(["PI", "MA"]),
+  cidade: z.string().min(1),
+  faixaInvestimento: z.string().min(1),
+  consentimento: z.boolean().refine((value) => value),
+});
+
+export const onlyDigits = (value: string) => value.replace(/\D/g, "");
+
+const submitLeadToCrm = createServerFn({ method: "POST" })
+  .validator((input: unknown) => leadSchema.parse(input))
+  .handler(async ({ data }) => {
+    const response = await fetch(
+      "https://newtracking-sales-sys.vercel.app/api/webhooks/leads/cmqwra13j0003t4mc92b5eobn",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          phone: onlyDigits(data.whatsapp),
+          name: data.nome.trim(),
+          document: onlyDigits(data.cnpj),
+          city: data.cidade,
+          state: data.estado,
+          pipeline_stage: "Qualificado",
+        }),
+      },
+    );
+
+    if (!response.ok) {
+      console.error(`CRM rejected lead submission with status ${response.status}.`);
+    }
+
+    return { ok: response.ok };
+  });
 
 export async function sendLead(lead: Lead): Promise<{ ok: boolean }> {
-  if (!LEAD_WEBHOOK_URL) {
-    // Sem integração configurada: simula o envio sem expor dados sensíveis.
-    await new Promise((r) => setTimeout(r, 700));
-    return { ok: true };
-  }
-
   try {
-    const response = await fetch(LEAD_WEBHOOK_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(lead),
-    });
-    return { ok: response.ok };
-  } catch {
+    return await submitLeadToCrm({ data: lead });
+  } catch (error) {
+    console.error("Unable to submit lead to CRM.", error);
     return { ok: false };
   }
 }
-
-export const onlyDigits = (value: string) => value.replace(/\D/g, "");
 
 export function maskCNPJ(value: string) {
   const digits = onlyDigits(value).slice(0, 14);
