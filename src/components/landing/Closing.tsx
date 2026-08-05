@@ -1,5 +1,6 @@
-import { BookOpen, Leaf } from "lucide-react";
-import { COMPANY_CNPJ, COMPANY_NAME } from "@/lib/site";
+import { BookOpen } from "lucide-react";
+import bioNatureLogo from "@/assets/logo bio extratus.png";
+import { COMPANY_CNPJ } from "@/lib/site";
 import { Reveal } from "./Reveal";
 import { btnGold } from "./ui";
 
@@ -37,16 +38,13 @@ export function Footer() {
     <footer className="bg-primary-dark pb-8 pt-16 text-white/70">
       <div className="container-page grid gap-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center border border-secondary/60">
-              <Leaf className="h-4.5 w-4.5 text-secondary" aria-hidden="true" />
-            </span>
-            <span>
-              <span className="block font-[family-name:var(--font-display)] text-xl leading-none text-white">
-                {COMPANY_NAME}
-              </span>
-            </span>
-          </div>
+          <img
+            src={bioNatureLogo}
+            alt="Bio Nature Cosméticos"
+            width={800}
+            height={400}
+            className="h-auto w-[230px] max-w-full object-contain object-left md:w-[260px]"
+          />
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
             Distribuição e atendimento comercial de produtos Bio Extratus para empresas no Piauí e
             Maranhão.
