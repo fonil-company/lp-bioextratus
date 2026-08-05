@@ -59,7 +59,7 @@
   --surface: oklch(1 0 0);
   --foreground: oklch(0.34 0.018 120);
   --body: oklch(0.4 0.018 115);
-  --title: oklch(0.27 0.065 145);
+  --title: #17b82a;
   --subtle: oklch(0.57 0.018 115);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.34 0.018 120);
@@ -70,7 +70,7 @@
   --primary-dark: oklch(0.29 0.072 146);
   --primary-light: oklch(0.66 0.13 139);
   --primary-soft: oklch(0.945 0.035 137);
-  --secondary: oklch(0.72 0.19 61);
+  --secondary: #fea400;
   --secondary-foreground: oklch(1 0 0);
   --secondary-dark: oklch(0.64 0.19 55);
   --secondary-light: oklch(0.8 0.16 68);
