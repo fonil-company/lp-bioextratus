@@ -44,7 +44,7 @@ export function Footer() {
               alt="Bio Nature Cosméticos"
               width={800}
               height={400}
-              className="h-auto w-[230px] max-w-full object-contain md:w-[260px]"
+              className="h-auto w-[140px] max-w-full object-contain md:w-[160px]"
             />
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
