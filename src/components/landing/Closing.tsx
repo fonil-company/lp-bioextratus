@@ -38,13 +38,15 @@ export function Footer() {
     <footer className="bg-primary-dark pb-8 pt-16 text-white/70">
       <div className="container-page grid gap-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div>
-          <img
-            src={bioNatureLogo}
-            alt="Bio Nature Cosméticos"
-            width={800}
-            height={400}
-            className="h-auto w-[230px] max-w-full object-contain object-left md:w-[260px]"
-          />
+          <div className="inline-flex max-w-full items-center rounded-lg bg-white px-3 py-2 shadow-[0_12px_28px_rgba(0,0,0,0.16)] md:px-4">
+            <img
+              src={bioNatureLogo}
+              alt="Bio Nature Cosméticos"
+              width={800}
+              height={400}
+              className="h-auto w-[230px] max-w-full object-contain md:w-[260px]"
+            />
+          </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
             Distribuição e atendimento comercial de produtos Bio Extratus para empresas no Piauí e
             Maranhão.
