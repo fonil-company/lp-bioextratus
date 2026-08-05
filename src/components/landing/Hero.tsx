@@ -1,6 +1,5 @@
 import { ArrowDown, FileText, Package, Percent, Store, Truck } from "lucide-react";
 import heroDesktop from "@/assets/hero-desktop-optimized.jpg";
-import heroMobile from "@/assets/CARROSSEL/mobile-hero-optimized.jpg";
 import { HeroLeadForm } from "./LeadForm";
 
 const condicoes = [
@@ -23,19 +22,6 @@ export function Hero() {
           className="hero-image h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.93)_34%,rgba(255,255,255,0.55)_50%,rgba(255,255,255,0.03)_72%)]" />
-      </div>
-
-      <div className="absolute inset-x-0 top-[82px] h-[1450px] overflow-hidden md:hidden">
-        <img
-          src={heroMobile}
-          alt=""
-          width={1200}
-          height={1789}
-          fetchPriority="high"
-          aria-hidden="true"
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-white/10 to-white/70" />
       </div>
 
       <div className="container-page relative z-10 grid gap-10 py-12 md:min-h-[700px] md:grid-cols-[minmax(0,1fr)_minmax(390px,0.78fr)] md:items-center md:gap-8 md:py-14 xl:grid-cols-[minmax(0,1.12fr)_480px] xl:gap-14">
