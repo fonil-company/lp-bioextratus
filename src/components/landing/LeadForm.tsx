@@ -53,6 +53,9 @@ const emptyLead: Lead = {
   consentimento: false,
 };
 
+const CONSULTANT_WHATSAPP_URL =
+  "https://wa.me/558694241572?text=Ol%C3%A1%21%20Acabei%20de%20preencher%20o%20formul%C3%A1rio%20da%20Bio%20Nature%20e%20gostaria%20de%20falar%20com%20um%20consultor.";
+
 const fieldClass =
   "mt-2 min-h-12 w-full rounded-md border border-border bg-background px-4 py-3 text-sm text-title transition-[border-color,box-shadow,background-color] duration-250 placeholder:text-subtle/70 hover:border-primary/45 focus:border-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary/8 disabled:cursor-not-allowed disabled:opacity-60";
 
@@ -138,6 +141,7 @@ export function HeroLeadForm() {
     if (result.ok) {
       setStatus("success");
       setValues(emptyLead);
+      window.location.assign(CONSULTANT_WHATSAPP_URL);
     } else {
       setStatus("error");
     }
