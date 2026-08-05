@@ -17,14 +17,9 @@ if (isProductionRuntime) {
 
   await import(pathToFileURL(serverEntry).href);
 } else {
-  const viteBin = resolve(
-    "node_modules",
-    ".bin",
-    process.platform === "win32" ? "vite.cmd" : "vite",
-  );
-  const child = spawn(viteBin, ["dev"], {
+  const viteEntry = resolve("node_modules", "vite", "bin", "vite.js");
+  const child = spawn(process.execPath, [viteEntry, "dev"], {
     stdio: "inherit",
-    shell: process.platform === "win32",
   });
 
   for (const signal of ["SIGINT", "SIGTERM"]) {
