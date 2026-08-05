@@ -14,7 +14,6 @@ import {
   Truck,
 } from "lucide-react";
 import portfolioImg from "@/assets/portfolio.jpg";
-import { whatsappHref } from "@/lib/site";
 import { Reveal } from "./Reveal";
 import { btnGold, btnOutline, btnPrimary } from "./ui";
 
@@ -179,20 +178,12 @@ export function Portfolio() {
               </li>
             ))}
           </ul>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-9">
             <a
               href="#cadastro"
               className={`${btnPrimary} !bg-secondary !text-white hover:!bg-secondary-dark`}
             >
               Ver catálogo <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href={whatsappHref()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold text-white transition-colors hover:text-secondary"
-            >
-              Falar com um consultor <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </Reveal>

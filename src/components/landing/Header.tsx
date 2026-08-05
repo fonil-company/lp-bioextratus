@@ -30,7 +30,7 @@ export function Header() {
       }`}
     >
       <div className="container-page flex h-[82px] items-center justify-between gap-8">
-        <a href="#inicio" aria-label="Bio Nature Cosméticos - início" className="shrink-0">
+        <a href="#cadastro" aria-label="Ir para o formulário de cadastro" className="shrink-0">
           <img
             src={bioNatureLogo}
             alt="Bio Nature Cosméticos"
@@ -43,7 +43,7 @@ export function Header() {
         <nav aria-label="Navegação principal" className="hidden items-center gap-7 lg:flex">
           {NAV_LINKS.slice(1).map((link) => (
             <a
-              key={link.href}
+              key={link.label}
               href={link.href}
               className="relative py-3 text-[12px] font-semibold text-title/78 transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-secondary after:transition-transform hover:text-title hover:after:scale-x-100"
             >
@@ -82,7 +82,7 @@ export function Header() {
           >
             {NAV_LINKS.map((link) => (
               <a
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="border-b border-border py-3.5 text-sm font-semibold text-title"

@@ -5,7 +5,7 @@ import { Beneficios, ComoFunciona, ParaQuem, Portfolio } from "@/components/land
 import { OperationalCarousel } from "@/components/landing/OperationalCarousel";
 import { Coverage } from "@/components/landing/Coverage";
 import { Faq } from "@/components/landing/Faq";
-import { CtaFinal, Footer, WhatsAppFloat } from "@/components/landing/Closing";
+import { CtaFinal, Footer } from "@/components/landing/Closing";
 
 const TITLE = "Bio Nature Cosméticos | Revenda Bio Extratus no Piauí e Maranhão";
 const DESCRIPTION =
@@ -64,7 +64,6 @@ function Index() {
         <CtaFinal />
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

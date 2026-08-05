@@ -1,7 +1,6 @@
-import { ArrowDown, FileText, MessageCircle, Package, Percent, Store, Truck } from "lucide-react";
+import { ArrowDown, FileText, Package, Percent, Store, Truck } from "lucide-react";
 import heroDesktop from "@/assets/hero-desktop-optimized.jpg";
 import heroMobile from "@/assets/CARROSSEL/mobile-hero-optimized.jpg";
-import { whatsappHref } from "@/lib/site";
 import { HeroLeadForm } from "./LeadForm";
 
 const condicoes = [
@@ -57,12 +56,10 @@ export function Hero() {
 
           <div className="hero-enter mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start [animation-delay:470ms]">
             <a
-              href={whatsappHref()}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#cadastro"
               className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-secondary px-6 py-3 text-sm font-bold uppercase text-white shadow-[0_12px_28px_rgba(232,119,0,0.22)] transition-all hover:-translate-y-0.5 hover:bg-secondary-dark sm:w-auto"
             >
-              <MessageCircle className="h-4.5 w-4.5" aria-hidden="true" /> Falar com um consultor
+              <FileText className="h-4.5 w-4.5" aria-hidden="true" /> Receber catálogo comercial
             </a>
           </div>
 
@@ -99,8 +96,8 @@ export function Hero() {
         </ul>
 
         <a
-          href="#para-quem"
-          aria-label="Ver para quem é a distribuição"
+          href="#cadastro"
+          aria-label="Ir para o formulário de cadastro"
           className="mx-auto mt-6 flex h-8 w-8 items-center justify-center text-primary transition-transform hover:translate-y-1"
         >
           <ArrowDown className="h-5 w-5" aria-hidden="true" />
