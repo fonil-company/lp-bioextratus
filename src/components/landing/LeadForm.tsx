@@ -28,18 +28,23 @@ const FALLBACK_CITIES: Record<"PI" | "MA", string[]> = {
     "Teresina",
   ],
   MA: [
-    "Açailândia",
-    "Bacabal",
-    "Balsas",
-    "Barra do Corda",
-    "Caxias",
-    "Codó",
-    "Imperatriz",
-    "Paço do Lumiar",
-    "Pinheiro",
-    "Santa Inês",
-    "São José de Ribamar",
-    "São Luís",
+    "Nova Colinas",
+    "Governador Archer",
+    "Tasso Fragoso",
+    "Governador Eugênio Barros",
+    "Graça Aranha",
+    "Montes Altos",
+    "São Raimundo do Doca Bezerra",
+    "Sucupira do Norte",
+    "Lago dos Rodrigues",
+    "Passagem Franca",
+    "Jatobá",
+    "Marajá do Sena",
+    "Ribamar Fiquene",
+    "Sucupira do Riachão",
+    "Governador Luiz Rocha",
+    "Nova Iorque",
+    "Sambaíba",
   ],
 };
 
@@ -78,6 +83,13 @@ export function HeroLeadForm() {
 
     const controller = new AbortController();
     const estado = values.estado;
+
+    if (estado === "MA") {
+      setCities(FALLBACK_CITIES.MA);
+      setCitiesStatus("ready");
+      return () => controller.abort();
+    }
+
     setCitiesStatus("loading");
 
     fetch(
