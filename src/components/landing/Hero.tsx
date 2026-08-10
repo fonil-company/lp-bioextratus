@@ -1,5 +1,5 @@
 import { ArrowDown, FileText, Package, Percent, Store, Truck } from "lucide-react";
-import heroDesktop from "@/assets/hero-desktop-optimized.jpg";
+import bannerHero from "@/assets/Banner 1.jpg";
 import { HeroLeadForm } from "./LeadForm";
 
 const condicoes = [
@@ -12,16 +12,16 @@ const condicoes = [
 export function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-white pt-[82px]">
-      <div className="absolute inset-x-0 bottom-0 top-[82px] hidden overflow-hidden md:block">
+      <div className="absolute inset-x-0 bottom-0 top-[82px] overflow-hidden">
         <img
-          src={heroDesktop}
-          alt="Showroom e estoque da distribuidora com produtos capilares prontos para expedição"
+          src={bannerHero}
+          alt="Banner Bio Extratus com produtos para abastecer lojas"
           width={2400}
           height={1018}
           fetchPriority="high"
-          className="hero-image h-full w-full object-cover object-center"
+          className="hero-image h-full w-full scale-105 object-cover object-center blur-sm"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.93)_34%,rgba(255,255,255,0.55)_50%,rgba(255,255,255,0.03)_72%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.9)_54%,rgba(255,255,255,0.76)_100%)] md:bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.93)_34%,rgba(255,255,255,0.55)_52%,rgba(255,255,255,0.1)_76%)]" />
       </div>
 
       <div className="container-page relative z-10 grid gap-10 py-12 md:min-h-[700px] md:grid-cols-[minmax(0,1fr)_minmax(390px,0.78fr)] md:items-center md:gap-8 md:py-14 xl:grid-cols-[minmax(0,1.12fr)_480px] xl:gap-14">

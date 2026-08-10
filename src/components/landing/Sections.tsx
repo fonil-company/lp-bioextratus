@@ -13,7 +13,7 @@ import {
   Tags,
   Truck,
 } from "lucide-react";
-import portfolioImg from "@/assets/portfolio.jpg";
+import portfolioBg from "@/assets/Banner 2.jpg";
 import { Reveal } from "./Reveal";
 import { btnGold, btnOutline, btnPrimary } from "./ui";
 
@@ -154,14 +154,14 @@ export function Portfolio() {
   return (
     <section id="portfolio" className="relative min-h-[680px] overflow-hidden bg-primary-dark">
       <img
-        src={portfolioImg}
-        alt="Produtos para diferentes rotinas de cuidados capilares"
+        src={portfolioBg}
+        alt="Banner Bio Extratus com mix de produtos para lojas"
         loading="lazy"
         width={1280}
         height={960}
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full scale-110 object-cover object-center blur-sm"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,43,24,0.96)_0%,rgba(11,43,24,0.82)_50%,rgba(11,43,24,0.18)_100%)] max-md:bg-[linear-gradient(180deg,rgba(11,43,24,0.94)_0%,rgba(11,43,24,0.72)_72%,rgba(11,43,24,0.9)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,43,24,0.96)_0%,rgba(11,43,24,0.84)_48%,rgba(11,43,24,0.46)_100%)] max-md:bg-[linear-gradient(180deg,rgba(11,43,24,0.94)_0%,rgba(11,43,24,0.76)_72%,rgba(11,43,24,0.92)_100%)]" />
 
       <div className="container-page relative flex min-h-[680px] items-center py-20">
         <Reveal direction="left" className="max-w-2xl">
