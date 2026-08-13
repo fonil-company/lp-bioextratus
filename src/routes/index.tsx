@@ -8,7 +8,7 @@ import { Coverage } from "@/components/landing/Coverage";
 import { Faq } from "@/components/landing/Faq";
 import { CtaFinal, Footer } from "@/components/landing/Closing";
 
-const TITLE = "Bio Nature Cosméticos | Revenda Bio Extratus no Piauí e Maranhão";
+const TITLE = "Bio Nature Cosméticos | Revenda Bio Extratus no Piauí e Sul do Maranhão";
 const DESCRIPTION =
   "Abasteça seu estabelecimento com produtos Bio Extratus, catálogo comercial, pedido mínimo de R$ 300 e suporte para montar seu primeiro mix.";
 
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "Bio Nature Cosméticos, Bio Extratus Piauí, Bio Extratus Maranhão, revender Bio Extratus, distribuidora de cosméticos, cosméticos para farmácias, cosméticos para revenda, fornecedor de produtos capilares",
+          "Bio Nature Cosméticos, Bio Extratus Piauí, Bio Extratus Sul do Maranhão, revender Bio Extratus, distribuidora de cosméticos, cosméticos para farmácias, cosméticos para revenda, fornecedor de produtos capilares",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -40,8 +40,8 @@ export const Route = createFileRoute("/")({
           "@type": "Organization",
           name: "Bio Nature Cosméticos",
           description:
-            "Distribuição e atendimento comercial de produtos Bio Extratus para estabelecimentos no Piauí e Maranhão.",
-          areaServed: ["Piauí, Brasil", "Maranhão, Brasil"],
+            "Distribuição e atendimento comercial de produtos Bio Extratus para estabelecimentos no Piauí e Sul do Maranhão.",
+          areaServed: ["Piauí, Brasil", "Sul do Maranhão, Brasil"],
         }),
       },
     ],

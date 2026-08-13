@@ -10,7 +10,7 @@ const states = [
     color: "bg-secondary",
   },
   {
-    name: "Maranhão",
+    name: "Sul do Maranhão",
     description: "Suporte para montar e reabastecer seu mix",
     color: "bg-primary",
   },
@@ -23,7 +23,7 @@ export function Coverage() {
         <Reveal direction="left">
           <p className="eyebrow">Área de atendimento</p>
           <h2 className="mt-5 max-w-xl text-4xl md:text-5xl">
-            Sua loja no Piauí ou Maranhão? Conte com a Bio Nature.
+            Sua loja no Piauí ou Sul do Maranhão? Conte com a Bio Nature.
           </h2>
           <p className="mt-6 max-w-lg text-body">
             Atendimento para empresas com CNPJ, apoio na escolha dos produtos e condições comerciais
@@ -63,7 +63,7 @@ export function Coverage() {
           <figure className="overflow-hidden border border-primary/16 bg-primary-dark shadow-[0_24px_60px_rgba(13,55,29,0.16)]">
             <img
               src={coverageMap}
-              alt="Mapa do Brasil com Piauí e Maranhão destacados"
+              alt="Mapa do Brasil com Piauí e Sul do Maranhão destacados"
               loading="lazy"
               width={1600}
               height={1200}
@@ -74,7 +74,7 @@ export function Coverage() {
                 <span className="h-2.5 w-2.5 bg-secondary" aria-hidden="true" /> Piauí
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="h-2.5 w-2.5 bg-primary-light" aria-hidden="true" /> Maranhão
+                <span className="h-2.5 w-2.5 bg-primary-light" aria-hidden="true" /> Sul do Maranhão
               </span>
             </figcaption>
           </figure>

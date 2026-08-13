@@ -90,7 +90,7 @@ export function OperationalCarousel() {
           </div>
           <p className="max-w-md text-body md:text-right">
             Da conferência à separação, cada pedido passa por uma operação preparada para abastecer
-            lojistas no Piauí e Maranhão.
+            lojistas no Piauí e Sul do Maranhão.
           </p>
         </Reveal>
 

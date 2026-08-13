@@ -49,7 +49,7 @@ export function Footer() {
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
             Distribuição e atendimento comercial de produtos Bio Extratus para empresas no Piauí e
-            Maranhão.
+            Sul do Maranhão.
           </p>
           <p className="mt-3 text-xs font-semibold text-white/55">CNPJ {COMPANY_CNPJ}</p>
         </div>

@@ -28,7 +28,7 @@ export function Hero() {
         <div className="max-w-[620px] text-center md:text-left">
           <div className="hero-enter flex items-center justify-center gap-3 text-[11px] font-bold uppercase tracking-[0.13em] text-primary md:justify-start [animation-delay:100ms]">
             <span className="hidden h-0.5 w-12 bg-primary md:block" /> Distribuição Bio Extratus no
-            Piauí e Maranhão
+            Piauí e Sul do Maranhão
           </div>
 
           <h1 className="hero-enter mt-6 max-w-full break-words text-[2.15rem] leading-[1.02] text-title sm:max-w-[620px] sm:text-6xl sm:leading-[0.98] md:text-[4.1rem] [animation-delay:220ms]">
@@ -54,7 +54,7 @@ export function Hero() {
               className="mt-0.5 hidden h-4 w-4 shrink-0 text-primary md:block"
               aria-hidden="true"
             />
-            Exclusivo para empresas com CNPJ no Piauí e Maranhão.
+            Exclusivo para empresas com CNPJ no Piauí e Sul do Maranhão.
           </p>
         </div>
 

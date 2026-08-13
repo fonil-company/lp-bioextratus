@@ -36,7 +36,7 @@ export function ParaQuem() {
             <h2 className="mt-5 max-w-2xl text-4xl md:text-5xl">Feito para quem vende beleza.</h2>
           </div>
           <p className="max-w-md text-body">
-            Atendimento comercial no Piauí e Maranhão para estabelecimentos que querem ampliar o
+            Atendimento comercial no Piauí e Sul do Maranhão para estabelecimentos que querem ampliar o
             mix.
           </p>
         </Reveal>

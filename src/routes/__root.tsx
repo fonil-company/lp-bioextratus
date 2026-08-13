@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bio Nature Cosméticos | Revenda Bio Extratus no Piauí e Maranhão" },
+      { title: "Bio Nature Cosméticos | Revenda Bio Extratus no Piauí e Sul do Maranhão" },
       {
         name: "description",
         content:
-          "Distribuição e atendimento comercial de produtos Bio Extratus para estabelecimentos no Piauí e Maranhão.",
+          "Distribuição e atendimento comercial de produtos Bio Extratus para estabelecimentos no Piauí e Sul do Maranhão.",
       },
       { name: "author", content: "Bio Nature Cosméticos" },
       { name: "theme-color", content: "#ffffff" },
