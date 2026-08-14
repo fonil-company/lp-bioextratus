@@ -1,0 +1,14 @@
+.git
+.lovable
+.output
+.tanstack
+.wrangler
+node_modules
+*.log
+.vite-dev-error.log
+.vite-dev.log
+src/assets/Hero Image - Desktop.png
+src/assets/Hero Image.png
+src/assets/CARROSSEL/desktop hero.png
+src/assets/CARROSSEL/mobile hero.png
+src/assets/CARROSSEL/Piaui e MAranhão.png
