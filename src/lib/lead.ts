@@ -23,30 +23,55 @@ const leadSchema = z.object({
 
 export const onlyDigits = (value: string) => value.replace(/\D/g, "");
 
+const LEGACY_CRM_WEBHOOK_URL =
+  "https://newtracking-sales-sys.vercel.app/api/webhooks/leads/cmqwra13j0003t4mc92b5eobn";
+const CRM_WEBHOOK_URL = process.env.CRM_WEBHOOK_URL;
+
 const submitLeadToCrm = createServerFn({ method: "POST" })
   .validator((input: unknown) => leadSchema.parse(input))
   .handler(async ({ data }) => {
-    const response = await fetch(
-      "https://newtracking-sales-sys.vercel.app/api/webhooks/leads/cmqwra13j0003t4mc92b5eobn",
-      {
+    const payload = {
+      phone: onlyDigits(data.whatsapp),
+      name: data.nome.trim(),
+      document: onlyDigits(data.cnpj),
+      city: data.cidade,
+      state: data.estado,
+      pipeline_stage: "Qualificado",
+    };
+
+    const crmRequest = CRM_WEBHOOK_URL
+      ? fetch(CRM_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        })
+      : Promise.reject(new Error("CRM_WEBHOOK_URL is not configured."));
+
+    const [crmResult, legacyCrmResult] = await Promise.allSettled([
+      crmRequest,
+      fetch(LEGACY_CRM_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          phone: onlyDigits(data.whatsapp),
-          name: data.nome.trim(),
-          document: onlyDigits(data.cnpj),
-          city: data.cidade,
-          state: data.estado,
-          pipeline_stage: "Qualificado",
-        }),
-      },
-    );
+        body: JSON.stringify(payload),
+      }),
+    ]);
 
-    if (!response.ok) {
-      console.error(`CRM rejected lead submission with status ${response.status}.`);
+    const crmResponse = crmResult.status === "fulfilled" ? crmResult.value : undefined;
+    const legacyCrmResponse =
+      legacyCrmResult.status === "fulfilled" ? legacyCrmResult.value : undefined;
+
+    if (!crmResponse?.ok) {
+      console.error(
+        `New CRM rejected lead submission${crmResponse ? ` with status ${crmResponse.status}` : ""}.`,
+      );
+    }
+    if (!legacyCrmResponse?.ok) {
+      console.error(
+        `Legacy CRM rejected lead submission${legacyCrmResponse ? ` with status ${legacyCrmResponse.status}` : ""}.`,
+      );
     }
 
-    return { ok: response.ok };
+    return { ok: crmResponse?.ok ?? false };
   });
 
 export async function sendLead(lead: Lead): Promise<{ ok: boolean }> {
